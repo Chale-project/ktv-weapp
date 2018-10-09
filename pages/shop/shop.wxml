@@ -1,0 +1,108 @@
+<import src="../template/template.wxml" />
+
+<view class="shop-container">
+  <!-- 卡 -->
+  <view class="card">
+    <text class="shop-slogan">欢唱时代 - {{storeName}}</text>
+    <view class="card-bg">
+      <view class="card-bg-l">
+        <view class="card-desc">
+          <text class="card-title ellipsis">{{storeName}}会员卡</text>
+          <text class="card-type" wx:if="{{isVip}}">VIP</text>
+        </view>
+        <text class="card-phone" decode="{{true}}">{{userInfo.mobile}}</text>
+      </view>
+      <view class="card-bg-r" bindtap="userDetailTap">
+        <text>会员详情</text>
+        <image src="/images/more_icon.png"></image>
+      </view>
+    </view>
+    <view class="shop-icon">
+      <view class="shop-icon-l" bindtap="getShareQrImg">
+        <image src="/images/yaoqin.jpg"></image>
+        <text>分享好友</text>
+      </view>
+      <view class="shop-icon-m" bindtap='shopCharge'>
+        <image src="/images/huiyuanchognz.jpg"></image>
+        <text>活动充值</text>
+      </view>
+      <view class="shop-icon-r" bindtap="scanQrCode">
+        <image src="/images/dingfan.jpg"></image>
+        <text>扫码点单</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能 -->
+  <view class="function">
+    <view class="function-module" style="border-right: 1rpx solid #ddd;" bindtap="codeShow">
+      <image src="/images/bangdingka.png"></image>
+      <view class="function-desc">
+        <text class="function-title">核销码</text>
+        <text>向收银展示核销码</text>
+      </view>
+    </view>
+    <view class="function-module" style="margin-left: 30rpx;" bindtap="donationTap">
+      <image src="/images/zengsong.png"></image>
+      <view class="function-desc">
+        <text class="function-title">转赠中心</text>
+        <text>你有{{cardInfo.card_amount}}张卡可转赠</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 活动banner -->
+  <view class="store-active">
+    <!-- 88充会员 -->
+    <view class="store-active-list" wx:if="{{memberList.length>0}}" wx:for="{{memberList}}" wx:key="{{index}}" bindtap="goToChargeUserCard" data-cardid="{{item.id}}" data-storeid="{{item.store_id}}">
+      <view class="store-active-image">
+        <image mode="widthFix" src="{{imgUrl+item.banner}}"></image>
+        <view class="store-active-label-card">亏本月卡</view>
+      </view>
+      <view class="store-active-info clearfix">
+        <view class="store-active-info-left">
+          <view class="store-active-title ellipsis">{{item.name}}</view>
+          <view class="store-active-money">￥ {{item.buy_money}}</view>
+        </view>
+        <view class="store-active-info-right">
+          <button class="btn-join-active">参与活动</button>
+          <button class="btn-share-active">分享有奖</button>
+        </view>
+      </view>
+    </view>
+
+    <!-- 充存酒活动 -->
+    <view class="store-active-list" wx:if="{{activeList.length>0}}" wx:for="{{activeList}}" wx:key="{{index}}" bindtap="goToChargeActivityCard" data-cardid="{{item.id}}" data-storeid="{{item.store_id}}">
+      <view class="store-active-image">
+        <image mode="widthFix" src="{{imgUrl+item.poster}}"></image>
+        <view class="store-active-label-charge">实惠充值</view>
+      </view>
+      <view class="store-active-info clearfix">
+        <view class="store-active-info-left">
+          <view class="store-active-title ellipsis">{{item.title}}</view>
+          <view class="store-active-money">￥ {{item.recharge_money}}</view>
+        </view>
+        <view class="store-active-info-right">
+          <button class="btn-join-active" hover-class='none'>参与活动</button>
+          <button class="btn-share-active" hover-class='none'>分享砍价</button>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class="shade" wx:if="{{showShade}}">
+  <view class="shade-con">
+    <view class="code-title">核销码</view>
+    <view class="code-number">
+      <text decode="{{true}}">{{userInfo.extract_code}}</text>
+    </view>
+    <text class="code-text">请向收银出示核销码</text>
+    <text class="code-close" bindtap="codeClose">关闭</text>
+  </view>
+</view>
+
+<template is="shareModalMask" data="{{isShow,shareQrcodeImg}}" />
+<template is="authModalMask" data="{{isAuth,canIUse,authTitle,authSubTitle}}" />
+<template is="phoneModalMask" data="{{isPhone,authTitle,phoneSubTitle,checkStatus}}" />

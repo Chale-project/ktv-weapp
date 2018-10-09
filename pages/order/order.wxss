@@ -1,0 +1,144 @@
+@import '../template/template.wxss';
+
+.order-navbar.weui-navbar {
+  position: fixed;
+  border-bottom: 0;
+  background: #fff;
+}
+
+.order-navbar .weui-navbar__item {
+  color: #222;
+}
+
+.order-navbar .weui-navbar__item.weui-bar__item_on {
+  color: #ff7800;
+}
+
+.weui-navbar__slider {
+  background-color: #ff7800;
+}
+
+.order-contents {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 60px 0 10px;
+}
+
+.order-list {
+  margin-bottom: 10px;
+  background: #fff;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.order-list-store-logo {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin: 0 10px;
+}
+
+.order-list-store-logo image {
+  width: 100%;
+}
+
+.order-list-detail {
+  width: calc(100% - 60px);
+  float: right;
+}
+
+.order-list-detail-header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 6px;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.order-list-store-name {
+  flex: 2;
+}
+
+.order-list-status {
+  max-width: 80px;
+  flex: 1;
+  padding-right: 10px;
+  color: #ff8519;
+  text-align: right;
+}
+
+.order-list-detail-body {
+  padding: 5px 10px 5px 0;
+}
+
+.order-list-goods-item {
+  padding: 5px 0;
+}
+
+.order-list-goods-name {
+  width: 53%;
+  float: left;
+  color: #666;
+}
+
+.order-list-goods-price {
+  width: 32%;
+  float: left;
+  color: #999;
+}
+
+.order-list-goods-number {
+  width: 15%;
+  float: left;
+  text-align: right;
+  color: #ff5068;
+}
+
+.order-list-detail-footer {
+  padding-bottom: 5px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.goods-num {
+  padding-right: 5px;
+}
+
+.goods-pay-money {
+  padding-left: 5px;
+  color: #ff5068;
+}
+
+.order-list-operate {
+  box-sizing: border-box;
+  padding: 10px 10px 0;
+  border-top: 1rpx solid#ddd;
+  text-align: right;
+}
+
+.order-list-operate button {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 5px 12px;
+  font-size: 14px;
+  border: 1rpx solid#666;
+  line-height: normal;
+  vertical-align: top;
+}
+
+.no-order {
+  padding: 30px 15px;
+  text-align: center;
+}
+
+.but-receive-order {
+  margin-top: 80px;
+}
+
+.weui-loadmore__tips_in-line {
+  background: #f1f1f1;
+}

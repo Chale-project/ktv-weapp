@@ -1,0 +1,109 @@
+<import src="../template/template.wxml" />
+
+<!--vip-card.wxml-->
+<view class="page user-center">
+  <view class="user-info">
+    <view class="user-info-top">
+      <view class="user-avatar-name-mobile">
+        <view class="user-avatar">
+          <image src="{{userInfo.headimgurl}}" style="width:40px;height:40px;" mode='aspectFit'></image>
+        </view>
+        <view class="user-name-mobile">
+          <view class="user-name ellipsis">
+            {{userInfo.nickname}}
+          </view>
+          <view class="user-mobile ellipsis">
+            {{userInfo.mobile}}
+          </view>
+        </view>
+      </view>
+      <view class="user-interests">
+        <button class="weui-btn btn-user-interests" hover-class="none" bindtap="goToUserInterests">个人资料</button>
+      </view>
+    </view>
+
+  </view>
+  <view class="user-code-card">
+    <view class="user-code">
+      <view class="user-code-left">
+        <view class="user-code-number">{{toggleExtractCode?'******':userInfo.extract_code}}</view>
+        <view class="user-code-tips">向收银出示核销码</view>
+      </view>
+      <view class="user-code-right">
+        <button class="weui-btn btn-toggle-code" hover-class="btn-toggle-code-active" bindtap="toggleCode">{{toggleExtractCode?'显示':'隐藏'}}核销码</button>
+      </view>
+    </view>
+  </view>
+  <view class="user-share-coupon">
+    <view class="user-share" bindtap="goToShare">
+      <view class="user-icon">
+        <image src="/images/user_share_money.png" mode='aspectFit'></image>
+      </view>
+      <view class="user-share-content">
+        <view class="user-share-money ellipsis">{{cardInfo.withdraw_count!=null?cardInfo.withdraw_count:0}}元佣金</view>
+        <view class="user-share-title">分享奖励</view>
+      </view>
+    </view>
+    <view class="user-coupon" bindtap="goToCouponCenter">
+      <view class="user-icon">
+        <image src="/images/youhuiquan.png" mode='aspectFit'></image>
+      </view>
+      <view class="user-coupon-content">
+        <view class="user-coupon-val ellipsis">{{cardInfo.card_amount}}张卡包可用</view>
+        <view class="user-coupon-title">卡包</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="user-order">
+    <view class="user-order-header">
+      <text class="user-order-title">我的订单</text>
+      <navigator url="../order/order?type=0" hover-class="none">
+        <text class="user-order-sub-title">查看全部</text>
+      </navigator>
+    </view>
+    <view class="user-order-content">
+      <view class="weui-grids">
+        <block wx:for="{{orderData}}" wx:for-item="list">
+          <navigator url="../order/order?type={{list.type}}" class="weui-grid" hover-class="none">
+            <view class="weui-badge" wx:if="{{list.num>0}}">{{list.num}}</view>
+            <image class="weui-grid__icon" src="{{list.icon}}" />
+            <view class="weui-grid__label">{{list.title}}</view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <view class="user-others ">
+    <view class='service-option' bindtap='goToRecord'>
+      <view class='service-left'>
+        <image class='coin' src='/images/card_record.png'></image>
+        <text class='service-title'>用卡记录</text>
+      </view>
+      <image class='next' src='/images/next.png'></image>
+    </view>
+
+    <view class='service-option' bindtap='service'>
+      <view class='service-left'>
+        <image class='coin' src='/images/kefu.png'></image>
+        <text class='service-title'>服务中心</text>
+      </view>
+      <image class='next' src='/images/next.png'></image>
+    </view>
+
+    <view class='service-option' bindtap='message'>
+      <view class='service-left'>
+        <image class='coin' src='/images/zkefu.png'></image>
+        <text class='service-title'>微信客服</text>
+      </view>
+      <image class='next' src='/images/next.png'></image>
+    </view>
+    <button class='serviceBtn' open-type="contact" session-from="weapp"></button>
+  </view>
+</view>
+
+
+
+<template is="authModalMask" data="{{isAuth,canIUse,authTitle,authSubTitle}}" />
+<template is="phoneModalMask" data="{{isPhone,authTitle,phoneSubTitle,checkStatus}}" />

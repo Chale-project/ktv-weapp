@@ -1,0 +1,59 @@
+<view class="order-page">
+  <view class="weui-navbar order-navbar">
+    <block wx:for-items="{{tabs}}" wx:key="{{index}}">
+      <view id="{{index}}" class="weui-navbar__item {{type == index ? 'weui-bar__item_on' : ''}}" bindtap="switchTab">
+        <view class="weui-navbar__title">{{item}}</view>
+      </view>
+    </block>
+    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+  </view>
+  <view class="order-contents">
+    <scroll-view scroll-y style="height: 100%;" lower-threshold="50" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+      <!-- <block wx:if="{{orderList.length>0}}"> -->
+      <!-- <block wx:for="{{orderList}}" wx:for-item="list" wx:key="{{index}}"> -->
+      <view class="order-list">
+        <view class="order-list-info clearfix">
+          <view class="order-list-store-logo">
+            <image src="/images/default_img.jpg" mode="widthFix"></image>
+          </view>
+          <view class="order-list-detail" bindtap="goToOrderDetail">
+            <view class="order-list-detail-header">
+              <text class="order-list-store-name">百分百</text>
+              <text class="order-list-status">百分百</text>
+            </view>
+            <view class="order-list-detail-body">
+              <view class="order-list-goods-item clearfix">
+                <view class="order-list-goods-name ellipsis">彩色沙漠彩色沙漠彩色沙漠彩色沙漠</view>
+                <view class="order-list-goods-price ellipsis">￥1024.00</view>
+                <view class="order-list-goods-number">X 12</view>
+              </view>
+            </view>
+            <view class="order-list-detail-footer">
+              <text class="goods-num">共 {{21}} 件商品</text>
+              <text class="goods-status-tips">待支付</text>
+              <text class="goods-pay-money">￥588</text>
+            </view>
+          </view>
+        </view>
+        <view class="order-list-operate">
+          <button class="btn-pay-now" plain="true" disabled='disabled' bindtap="payNow">立即支付</button>
+          <button class="btn-sure-done" plain="true" loading="" bindtap="sureDone">确认完成</button>
+        </view>
+      </view>
+
+      <!-- </block> -->
+      <!--没有更多了  -->
+      <view class="weui-loadmore weui-loadmore_line" hidden="{{hidden}}">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多了^_^</view>
+      </view>
+      <!-- </block> -->
+      <!-- <block wx:else> -->
+      <view class="no-order">
+        <image src="../../images/no_order.png" style="width:30px;" mode="widthFix"></image>
+        <text>暂时没有此状态下订单^_^</text>
+      </view>
+      <!-- </block> -->
+    </scroll-view>
+
+  </view>
+</view>

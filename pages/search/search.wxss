@@ -1,0 +1,96 @@
+.sort-search {
+    position: relative;
+    height: 50px;
+    box-sizing:border-box;
+    padding: 0 30rpx;
+    display: flex;
+    align-items: center;  
+    justify-content: space-between;
+  }
+  
+.sort-search input {
+    width: calc(100% - 80px);
+    height: 66rpx;
+    border: 0;
+    border-radius: 40rpx;
+    margin-right: 15px;
+    padding-left: 30rpx;
+    background: #fff
+}
+.search input::-webkit-input-placeholder{
+    width: 100%
+}
+
+.sort-search button {
+    width: 70px;  
+    height: 66rpx;
+    border: 1rpx solid #ff4e00;
+    border-radius: 40rpx;
+    font-size: 14px;
+    color: #ff4e00;
+    text-align: center;
+    line-height: 66rpx;
+}
+
+.search-placeholder {
+    font-size: 14px;
+    color: #999;
+}
+
+/* 门店 */
+.funny {
+    border-top: 1rpx solid #ddd;
+    background: #fff;
+  }
+  
+  .funny-store-list {
+    padding: 20rpx;
+    border-bottom: 1rpx solid #ddd;
+  }
+  
+  .funny-store {
+    display: flex;
+    flex-direction: row;
+    /* padding-bottom: 30rpx; *//* border-bottom: 1rpx solid #efefef */
+  }
+  
+  .funny-store-img {
+    width: 150rpx;
+    height: 150rpx;
+    margin-right: 30rpx;
+  }
+  
+  .funny-store-desc {
+    display: flex;
+    flex-direction: column;
+    width: 500rpx;
+  }
+  
+  .funny-store-title {
+    font-size: 36rpx;
+    color: #151515;
+    width: 100%;
+  }
+  
+  .funny-store-discount {
+    font-size: 24rpx;
+    color: #ff4e00;
+    line-height: 40rpx;
+    width: 100%;
+  }
+  
+  .funny-store-sign {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .funny-store-sign text {
+    background: #fd9c02;
+    color: #fff;
+    padding: 0 10rpx;
+    font-size: 20rpx;
+    text-align: center;
+    border-radius: 2px;
+    margin-top: 20rpx;
+    margin-right: 20rpx;
+  }

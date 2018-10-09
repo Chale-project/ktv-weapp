@@ -1,0 +1,74 @@
+<view class="order-detail">
+  <view class="order-detail-card">
+    <view class="order-detail-header">商家信息</view>
+    <view class="order-detail-body order-detail-storeinfo">
+      <view class="order-detail-store-name">
+        百分百量贩KTV
+      </view>
+      <view class="order-detail-room-name">
+        包房：
+        <text>A012</text>
+      </view>
+    </view>
+  </view>
+  <view class="order-detail-card">
+    <view class="order-detail-header">
+      <text>商品信息</text>
+      <text>{{5}}人</text>
+    </view>
+    <view class="order-detail-body">
+      <view class="order-detail-goods-list clearfix">
+        <view class="order-detail-goods-thumb">
+          <image src="/images/default_img.jpg" mode="widthFix"></image>
+        </view>
+        <view class="order-detail-goods-info">
+          <view class="order-detail-goods-title ellipsis">青岛雪花纯生百威青岛雪花纯生百威青</view>
+          <view class="order-detail-goods-numprice">
+            <view class="order-detail-goods-num">X 1024</view>
+            <view class="order-detail-goods-price">￥ 1257.22</view>
+          </view>
+        </view>
+      </view>
+      <view class="order-detail-goods-list clearfix">
+        <view class="order-detail-goods-thumb">
+          <image src="/images/default_img.jpg" mode="widthFix"></image>
+        </view>
+        <view class="order-detail-goods-info">
+          <view class="order-detail-goods-title ellipsis">青岛雪花纯生百威青岛雪花纯生百威青</view>
+          <view class="order-detail-goods-numprice">
+            <view class="order-detail-goods-num">X 1024</view>
+            <view class="order-detail-goods-price">￥ 1257.22</view>
+          </view>
+        </view>
+      </view>
+      <view class="order-detail-goods-list clearfix">
+        <view class="order-detail-goods-thumb">
+          <image src="/images/default_img.jpg" mode="widthFix"></image>
+        </view>
+        <view class="order-detail-goods-info">
+          <view class="order-detail-goods-title ellipsis">青岛雪花纯生百威青岛雪花纯生百威青</view>
+          <view class="order-detail-goods-numprice">
+            <view class="order-detail-goods-num">X 1024</view>
+            <view class="order-detail-goods-price">￥ 1257.22</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="order-detail-footer">合计：
+      <text class="goods-total-money">￥{{10254.55}}</text>
+    </view>
+
+  </view>
+  <view class="order-detail-card">
+    <view class="order-detail-header">订单信息</view>
+    <view class="order-detail-body order-detail-time">
+      <view class="order-detail-create-time">下单时间：2018-09-24 19:15:56</view>
+      <view class="order-detail-pay-time">支付时间：2018-09-24 19:25:56</view>
+    </view>
+  </view>
+</view>
+
+<view class="order-detail-footer-nav">
+  <button class="btn-order-detail-pay" hover-class="btn-order-detail-pay-active">立即支付</button>
+  <!-- <button class="btn-order-detail-done" hover-class="btn-order-detail-done-active">确认完成</button> -->
+</view>

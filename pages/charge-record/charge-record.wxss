@@ -1,0 +1,170 @@
+@import "../template/template.wxss";
+
+.card-record-container {
+  border-top: 1rpx solid #ddd;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.weui-tab {
+  position: relative;
+  height: 100%;
+}
+
+.weui-navbar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  width: 100%;
+  border-bottom: 1rpx solid #ccc;
+  background: #fff;
+}
+
+.weui-navbar__item {
+  position: relative;
+  display: block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  padding: 13px 0;
+  text-align: center;
+  font-size: 0;
+}
+
+.weui-navbar__item.weui-bar__item_on {
+  color: #ff7800;
+}
+
+.weui-navbar__slider {
+  position: absolute;
+  content: " ";
+  left: 0;
+  bottom: 0;
+  width: 6em;
+  height: 2px;
+  background-color: #ff7800;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.weui-tab__panel {
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 10rpx;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.weui-navbar__title {
+  display: inline-block;
+  font-size: 15px;
+  max-width: 8em;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.weui-tab__content {
+  background: #fff;
+  margin-top: 10rpx;
+  text-align: center;
+}
+
+.card-record {
+  padding: 30rpx 0;
+  position: relative;
+}
+
+.card-record::after {
+  display: block;
+  position: absolute;
+  left: 30rpx;
+  bottom: 0;
+  width: 720rpx;
+  border-top: 1rpx solid #ddd;
+  content: ' ';
+}
+
+.card-record:last-child:after {
+  display: block;
+  position: absolute;
+  left: 30rpx;
+  bottom: 0;
+  width: 720rpx;
+  border-top: 0;
+  content: ' ';
+}
+
+.card-store-time {
+  box-sizing: border-box;
+  width: 70%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 5px;
+  text-align: left;
+  
+}
+
+.card-store {
+  font-size: 16px;
+  color: #151515;
+}
+
+.card-time {
+  margin-top: 5px;
+  font-size: 20rpx;
+  color: #999;
+}
+
+.card-type-num {
+  box-sizing: border-box;
+  width: 30%;
+  float: left;
+  padding-left: 5px;
+  padding-right: 16px;
+  text-align: right;
+}
+
+.card-type {
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.recharge {
+  color: #1f88f4;
+  font-size: 15px;
+}
+
+.consum {
+  color: #f00;
+  font-size: 36rpx;
+}
+
+.card-num {
+  margin-top: 5px;
+  font-size: 20rpx;
+  color: #666;
+}
+
+.card-no-record {
+  color: #666;
+  font-size: 30rpx;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.delete-list {
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #ddd;
+  text-align: right;
+  color: #f00;
+  font-size: 30rpx;
+}

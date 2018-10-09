@@ -1,0 +1,166 @@
+/* 模态弹出层 */
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9999;
+  color: #fff;
+}
+
+.modal-dialog-auth {
+  position: fixed;
+  box-sizing: border-box;
+  width: 260px;
+  min-height: 260px;
+  left: 50%;
+  top: 50%;
+  margin-left: -130px;
+  margin-top: -130px;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+  background: #fff;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+.auth-modal-mask-title {
+  padding: 10px 0;
+  color: #222;
+}
+
+.auth-modal-mask-sub-title {
+  color: #999;
+}
+
+.btn-auth-login, .btn-bind-phone {
+  margin-top: 15px;
+  color: #fff;
+  background: rgb(145, 255, 1);
+}
+
+.btn-auth-login-active {
+  background: rgb(145, 255, 0.6);
+}
+
+.btn-bind-phone {
+  background: rgba(255, 133, 25, 1);
+}
+
+.btn-bind-phone-active {
+  background: rgba(255, 133, 25, 0.6);
+}
+
+.btn-go-reg-login{
+  margin-top: 5px;
+}
+.btn-go-reg-login-active{
+  background: rgba(26, 173, 25, .6)
+}
+/* 活动banner */
+
+.banner swiper {
+  width: 100%;
+  height: 300rpx;
+}
+
+.banner swiper image {
+  width: 100%;
+  height: 300rpx;
+}
+
+/* 分享图片遮罩层 */
+
+.pic-shade {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  transition: 2s linear;
+}
+
+.share-pic-con {
+  width: calc(100% - 60rpx);
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  position: relative;
+}
+
+.pic-image {
+  width: calc(100% - 90rpx);
+  min-height: 200px;
+  max-height: 470px;
+  padding: 45rpx 45rpx 30rpx;
+  border-radius: 8rpx;
+}
+
+.clipView {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 45rpx;
+  height: 80rpx;
+}
+
+.save-btn {
+  width: calc(50% - 25rpx);
+  background: rgb(255, 98, 0);
+  font-size: 30rpx;
+  font-weight: 300;
+  border-radius: 8rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.pic-text {
+  width: calc(100% - 90rpx);
+  font-size: 24rpx;
+  margin-left: 45rpx;
+  margin-top: 15rpx;
+  text-align: center;
+  color: rgb(113, 113, 113);
+}
+
+.tab-header {
+  height: 88rpx;
+  background: #fff;
+  width: 750rpx;
+}
+
+.tab-header-sort {
+  display: inline-block;
+  height: 84rpx;
+  line-height: 84rpx;
+  font-size: 30rpx;
+  color: #222;
+  border-bottom: 4rpx solid #fff;
+  text-align: center;
+}
+
+.tab-header-sort.active {
+  border-bottom: 4rpx solid #ff7800;
+  color: #ff7800;
+}
+
+.close-share {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 5px;
+  top: 5px;
+}
+
+.close-share image {
+  width: 100%;
+}

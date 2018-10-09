@@ -1,0 +1,278 @@
+Page{
+  background: white;
+}
+.rewardView{
+  position: relative;
+}
+.reward-topView{
+ padding: 20px 15px 25px;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ color: white;
+  background: -webkit-linear-gradient(left, rgb(255, 114, 72) , rgb(255, 141, 78)); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, rgb(255, 114, 72), rgb(255, 141, 78));/* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, rgb(255, 114, 72), rgb(255, 141, 78)); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right,  rgb(255, 114, 72) , rgb(255, 141, 78)); /* 标准的语法（必须放在最后） */
+}
+.topView-left,.numView,.item-nickView,.item-right{
+  display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+}
+.topView-money{
+  font-size: 18px;
+}
+.topView-lab{
+  font-size: 11px;
+  font-weight: 300;
+}
+
+.apply{
+  background: -webkit-linear-gradient(#f56268, #bb1c2a); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#f56268, #bb1c2a); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#f56268, #bb1c2a); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#f56268, #bb1c2a); /* 标准的语法（必须放在最后） */
+  font-size: 12px;
+  width: 100px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 20px;
+  color: white;
+  margin-top: 10rpx;
+}
+
+.reward-downView{
+ height: 40px;
+ display: flex;
+ flex-direction: row;
+ padding-bottom: 10rpx;
+ background: -webkit-linear-gradient(left,rgb(246, 108, 64) , rgb(246, 124, 67)); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, rgb(246, 108, 64), rgb(255, 124, 67));/* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, rgb(246, 108, 64), rgb(255, 124, 67)); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right,  rgb(246, 108, 64) , rgb(255, 124, 67)); /* 标准的语法（必须放在最后） */
+}
+.reward-downView-left,.item-left{
+  width: 50%;
+  height: 100%;
+  display: flex;
+ flex-direction: row;
+}
+.reward-coin{
+  width: 48rpx;
+  height: 48rpx;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.number{
+  color: rgb(253, 225, 0);
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 6rpx;
+}
+.rewardLab{
+  color: white;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+
+
+
+.record-sign{
+  color: black;
+  font-size: 12px;
+  text-align: left;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  background: rgb(242, 242, 242);
+  border-bottom: 1px solid rgb(234, 234, 234);
+}
+.recordView{
+  padding-bottom:80px;
+}
+.record-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px 24px;
+  border-bottom: 1px solid rgb(234, 234, 234);
+}
+.head{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 10px;
+  border-radius: 40rpx;
+}
+.nick{
+ font-size: 14px;
+ color: black;
+ 
+}
+.time{
+  font-size: 12px;
+  color:rgb(87, 87, 87);
+}
+.item-money{
+  font-size: 14px;
+  color:rgb(255, 122, 73);
+}
+.item-title{
+ font-size: 12px;
+ color:black;
+}
+.item-right{
+  width: 50%;
+  text-align: right;
+}
+.reward-record{
+  width: 100%;
+  position: fixed;
+  bottom: 30rpx;
+}
+.recordLog{
+  margin: 30rpx 30rpx 0;
+  width: calc(100% - 60rpx);
+  background:#ff9728;
+  border-radius: 10rpx;
+  color: white;
+  font-weight: 300;
+}
+
+/*弹框*/
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog-share {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: right;
+  z-index: 9010;
+  overflow: hidden;
+}
+
+.modal-dialog-share image {
+  margin-right: 65px;
+}
+
+.red-record {
+  position: fixed;
+  box-sizing: border-box;
+  height: 450px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: -500px;
+  background: #f1f1f1;
+  z-index: 9010;
+}
+
+.red-record-close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -15px;
+  right: 5px;
+}
+
+.red-record-header {
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #222;
+  background: #f1f1f1;
+}
+
+.red-record-body {
+  padding: 10px 15px;
+  background: #fff;
+}
+
+.red-record-list {
+  padding: 6px 0;
+  border-bottom: 0.5px solid #ddd;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.red-record-avatar {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin: 10px 10px 0 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.red-record-info {
+  width: 60%;
+  float: left;
+}
+
+.red-record-nickname ,.red-record-m{
+  padding: 5px 5px 0 0;
+  font-size:16px; 
+}
+.red-record-m{
+  color: #ff3d3d;
+}
+
+.red-record-time,.red-record-storesname,.red-record-log{
+  color: #999;
+   font-size: 12px;
+}
+.red-record-val{
+  width: 100px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+.but-close {
+  width: 25px;
+  height: 25px;
+  padding: 2.5px;
+  background: #fff;
+  border-radius: 50%;
+}
+.red-record-status{
+  background: #ff3d3d;
+  border-radius: 10rpx;
+  color: white;
+  padding: 8rpx 16rpx;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 10rpx;
+}
+.red-record-unstatus{
+  background: #b1b1b1;
+  border-radius: 10rpx;
+  color: white;
+  padding: 8rpx 16rpx;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 10rpx;
+}
+.red-record-moneying{
+  font-size: 16px;
+  color: #ff8c3f;
+}
+.red-record-didmoney{
+  font-size: 16px;
+  color: #3781d7;
+}

@@ -1,0 +1,6 @@
+<view class='sucess'>
+ <image class='sucess-coin' src='/images/apply_success.png'></image>
+ <text class='sucess-money'>提现{{money}}元申请已提交</text>
+ <text class='sucess-shop'>请到{{storesname}}收银取现</text>
+ <button class='return-home' bindtap='returnHome'>返回个人页面</button>
+</view>

@@ -1,0 +1,24 @@
+<view class='list-container'>
+  <view class="card-list-l">
+    <text class="card-list-l-text">头像</text>
+  </view>
+  <image class='avatar' src='{{userInfo.headimgurl}}'></image>
+</view>
+<view class='list-container' bindtap='multifyNick'>
+  <view class="card-list-l">
+    <text class="card-list-l-text">用户名/昵称</text>
+  </view>
+  <view class='card-list-r'>
+     <text class="card-list-r-text" style='margin-right: 30rpx;'>{{userInfo.nickname}}</text> 
+    <text class="iconfont icon-gengduo1"></text>
+  </view>
+</view>
+<!-- <view class='list-container' bindtap='alterPhone'>
+  <view class="card-list-l" bindconfirm='changeNick'>
+    <text class="card-list-l-text">修改绑定手机号</text>
+  </view>
+  <view class='card-list-r'>
+    <text class="card-list-r-text">{{userInfo.mobile}}</text>
+    <text class="iconfont icon-gengduo1"></text>
+  </view>
+</view> -->

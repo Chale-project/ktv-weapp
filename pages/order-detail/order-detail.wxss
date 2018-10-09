@@ -1,0 +1,115 @@
+/* pages/order-detail/order-detail.wxss */
+
+.order-detail {
+  padding: 15px 15px 50px;
+}
+
+.order-detail-card {
+  margin-bottom: 10px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.order-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.order-detail-body {
+  padding: 10px;
+}
+
+.order-detail-footer {
+  padding: 8px 10px;
+  text-align: right;
+  border-top: 1rpx solid #ddd;
+}
+
+.order-detail-storeinfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-detail-store-name {
+  width: 60%;
+}
+
+.order-detail-room-name {
+  width: 40%;
+  text-align: right;
+}
+
+.order-detail-goods-list {
+  padding-bottom: 8px;
+}
+
+.order-detail-goods-thumb {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 10px;
+}
+
+.order-detail-goods-thumb image {
+  width: 100%;
+}
+
+.order-detail-goods-info {
+  width: calc(100% - 50px);
+  float: left;
+}
+
+.order-detail-goods-title {
+  margin-bottom: 2px;
+}
+
+.order-detail-goods-numprice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-detail-goods-num, .order-detail-goods-price {
+  flex: 1;
+  font-size: 12px;
+}
+
+.order-detail-goods-num {
+  color: #ff5068;
+}
+
+.order-detail-goods-price {
+  color: #999;
+  text-align: right;
+}
+
+.goods-total-money {
+  color: #ff8519;
+}
+
+.order-detail-footer-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.btn-order-detail-pay, .btn-order-detail-done {
+  background: rgba(255, 133, 25, 1);
+  border-radius: 0;
+  color: #fff;
+}
+
+.btn-order-detail-pay-active, .btn-order-detail-done-active {
+  background: rgba(255, 133, 25, .6);
+}
+
+button[disabled].btn-order-detail-pay,
+button[disabled].btn-order-detail-done-active {
+  color: #fff;
+  background: rgba(255, 133, 25, .6);
+}

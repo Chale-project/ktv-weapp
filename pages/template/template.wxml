@@ -1,0 +1,67 @@
+<!-- 授权模态弹窗 -->
+<template name="authModalMask">
+  <view class="modal-mask" catchtouchmove="preventTouchMove" hidden="{{isAuth}}"></view>
+  <view class="modal-dialog-auth" hidden="{{isAuth}}">
+    <image src="/images/auth_safe.png" mode="widthFix" style="width:100px"></image>
+    <view class="auth-modal-mask-title">{{authTitle}}</view>
+    <view class="auth-modal-mask-sub-title">{{authSubTitle}}</view>
+    <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="btn-auth-login" hover-class="btn-auth-login-active">安全登录</button>
+    <text wx:else>微信版本太低，请先升级微信！</text>
+  </view>
+</template>
+
+
+
+<!-- 获取微信绑定的手机号模态弹窗 -->
+<template name="phoneModalMask">
+  <view class="modal-mask" catchtouchmove="preventTouchMove" hidden="{{isPhone}}"></view>
+  <view class="modal-dialog-auth" hidden="{{isPhone}}">
+    <image src="/images/auth_safe.png" mode="widthFix" style="width:100px"></image>
+    <view class="auth-modal-mask-title">{{authTitle}}</view>
+    <view class="auth-modal-mask-sub-title">{{phoneSubTitle}}</view>
+    <button bindtap="goToRegLogin" type="primary" class="btn-go-reg-login" hover-class="btn-go-reg-login-active">绑定个人手机号</button>
+    <button open-type="getPhoneNumber" bindgetphonenumber="bindGetphonenumber" class="btn-bind-phone" hover-class="btn-bind-phone-active" hidden="{{checkStatus}}">绑定微信手机号</button>
+  </view>
+</template>
+
+
+<!-- 轮播图 -->
+<template name="swiperTemplate">
+  <view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}">
+      <block wx:for="{{activityList}}" wx:for-item="activity">
+        <swiper-item>
+          <image src="{{imgUrl+activity.image}}" bindtap="activityTap" data-activityId="{{activity.activityId}}" data-forward="{{activity.forward_location}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</template>
+
+<!-- 分享层 -->
+<template name="shareModalMask">
+  <view class="pic-shade" hidden="{{isShow}}">
+    <view class="share-pic-con">
+      <image class="pic-image" bindtap="previewImage" src="{{shareQrcodeImg}}" mode="widthFix"></image>
+      <view class='clipView'>
+        <button class="save-btn" bindtap="saveTap">保存图片</button>
+        <button class="save-btn" open-type="share">立即分享</button>
+      </view>
+      <view class="pic-text">保存图片发给您的朋友来happy！</view>
+    </view>
+    <view class="close-share" bindtap='closeShare'>
+      <image src='/images/cloce.png' mode="widthFix"></image>
+    </view>
+  </view>
+</template>
+
+
+<template name='tabTemplate'>
+  <view class='tab-header'>
+    <block wx:for="{{tabList}}" wx:for-item="tab" wx:for-index="idx">
+      <view class="tab-header-sort {{activeIndex == idx ? 'active' : ''}}" style='width:{{tabWidth}}rpx;' data-typeName='{{tab.alt}}' data-typeIdx='{{idx}}' catchtap="tabClick">
+        <text class="tab-header-text">{{tab.alt}}</text>
+      </view>
+    </block>
+  </view>
+</template>

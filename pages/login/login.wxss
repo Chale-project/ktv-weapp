@@ -1,0 +1,51 @@
+@import '../template/template.wxss';
+
+page {
+  background: #fff;
+}
+
+.login-image {
+  padding: 30px 15px;
+  text-align: center;
+}
+
+.login-image image {
+  max-width: 110px;
+}
+
+.btn-get-verifycode {
+  width: 110px;
+  height: 42px;
+  margin-left: 0;
+  border-radius: 0;
+  color: #fff;
+  background: rgba(255, 133, 25, 1);
+}
+
+.btn-get-verifycode:active {
+  color: #fff;
+}
+
+button[disabled].btn-get-verifycode {
+  color: #fff;
+  background: rgba(255, 133, 25, 0.5);
+}
+
+.btn-get-verifycode-active {
+  color: #fff;
+  background: rgba(255, 133, 25, 0.5);
+}
+
+.btn-reg-login {
+  color: #fff;
+  background: rgba(255, 133, 25, 1);
+}
+
+.btn-reg-login-active {
+  background: rgba(255, 133, 25, 0.5);
+}
+
+button[disabled].btn-reg-login {
+  color: #fff;
+  background: rgba(255, 133, 25, 0.5);
+}

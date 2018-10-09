@@ -1,0 +1,36 @@
+<view class='card-record-container'>
+  <view class="weui-tab__tab">
+  <!-- <scroll-view class='scrollView' scroll-x="true" style="box-sizing:border-box; width:100%;"> -->
+    <view class="weui-navbar">
+      <block wx:for='{{tabList}}' wx:key="{{index}}">
+        <view class="weui-navbar__item {{item.active? 'weui-bar__item_on' : ''}}" data-index="{{index}}" data-type="{{item.type}}" bindtap="switchTab">
+          <view class="weui-navbar__title">{{item.title}}</view>
+        </view>
+      </block>
+      <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    </view>
+  <!-- </scroll-view> -->
+  </view>
+
+
+  <view class="weui-tab__content">
+    <view class='delete-list' wx:if="{{showDelete}}" bindtap='deleteList'>清除记录</view>
+    <block wx:for="{{cardList}}" wx:for-item="card">
+      <view class='card-record clearfix'>
+        <view class="card-store-time">
+          <view class="card-store ellipsis">{{card.store_name}}</view>
+          <view class="card-time ellipsis">{{card.addtime}}</view>
+        </view>
+        <view class="card-type-num">
+          <view wx:if="{{card.code == 'consum' || card.code == 'send' || card.code == 'outtime' || card.code == 'revokeRechage'}}" class="consum">-{{card.par_value}}瓶</view>
+          <view wx:elif="{{card.code == 'sendback' || card.code == 'recharge' || card.code == 'recive' || card.code == 'revokeConsum'}}" class="recharge">+{{card.par_value}}瓶</view>
+
+          <view class="card-num">{{card.pay_type == 2 ? '在线支付' : card.remark}}</view>
+        </view>
+      </view>
+    </block>
+    <view class='card-no-record' hidden='{{hidden}}'>没有更多了…</view>
+  </view>
+
+
+</view>

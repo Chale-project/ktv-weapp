@@ -1,0 +1,30 @@
+/* pages/changeNick/changeNick.wxss */
+.topview{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  background-color: white;
+  border: 1px solid rgb(230, 230, 230);
+  height: 90rpx;
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+}
+.inputField{
+ font-size: 16px; 
+}
+.confirmView{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  margin-top: 200rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.confirm{
+  background-color: rgb(255, 134, 0);
+  border-radius: 10rpx;
+  color: white;
+  width: calc(100% - 60rpx);
+}

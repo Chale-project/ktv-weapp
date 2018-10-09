@@ -1,0 +1,98 @@
+<import src="../template/template.wxml" />
+<view class="goods-page">
+  <!-- 搜索 -->
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="bindconfirm" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索</view>
+      </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+
+  <!-- 商品 -->
+  <view class="goods-content">
+    <view class="goods-left-nav">
+      <scroll-view scroll-y="true" style="height:{{deviceHeight}}px;" class="left_tabbar_list">
+        <view bindtap="changeTab" data-index="{{index}}" data-id="{{item.id}}" class="goods-nav-item ellipsis {{activeIndex==index?'active':''}}" wx:for="{{goodsNav}}" wx:key="index">{{item.name}}</view>
+      </scroll-view>
+    </view>
+    <view class="goods-right-list">
+      <scroll-view lower-threshold="50" bindscrolltolower="getMore" scroll-y="true" style="height:{{deviceHeight}}px;" class="tab_panel">
+        <view class="goods-itme clearfix" wx:for="{{goodsList}}" wx:key="index">
+          <view class="goods-thumb">
+            <image src="{{item.image?imgUrl+item.image:'/images/default_img.jpg'}}" mode='widthFix' data-img="{{item.image?imgUrl+item.image:'/images/default_img.jpg'}}" bindtap="previewImage"></image>
+          </view>
+          <view class="goods-info">
+            <view class="goods-title ellipsis-2">{{item.title}}</view>
+            <view class="goods-sales-volume">库存：{{item.stock?item.stock:'9999'}}</view>
+            <view class="goods-price-operate clearfix">
+              <view class="goods-price ellipsis">￥{{item.price}}</view>
+              <view class="goods-operate">
+                <view class="goods-minus" bindtap="goodsMinus" wx:if="{{item.number>0}}" data-id="{{item.id}}">-</view>
+                <view class="goods-number ellipsis" wx:if="{{item.number>0}}">{{item.number}}</view>
+                <view class="goods-plus" bindtap="goodsPlus" data-id="{{item.id}}" data-title="{{item.title}}" data-price="{{item.price}}">+</view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class='goods-no-data' hidden='{{hidden}}'>没有更多了…</view>
+      </scroll-view>
+    </view>
+  </view>
+
+</view>
+
+<!-- 底部导航 -->
+<view class="footer-nav">
+  <view class="footer-nav-left-cart" bindtap="showCart">
+    <view class="cart-nav-icon-number {{moveActive?'active':''}}">
+      <image src="/images/zengsong.png" mode="widthFix"></image>
+      <view class="cart-total-num" hidden="{{totalNum<1}}">{{totalNum>99?'99+':totalNum}}</view>
+    </view>
+    <view class="cart-total-money">￥{{totalMoney}}</view>
+  </view>
+  <view class="footer-nav-right-to-order" bindtap="goToOrder">选好了</view>
+</view>
+
+<!-- 购物车 -->
+<view class="modal-mask" catchtouchmove="preventTouchMove" hidden="{{showCartModal}}" bindtap="hideCart"></view>
+<view animation="{{animationData}}" class="goods-cart">
+  <view class="goods-cart-header">
+    <view class="goods-cart-title">购物车</view>
+    <view class="goods-cart-clear" bindtap="clearCart">清空购物车</view>
+  </view>
+  <view class="goods-cart-body">
+    <scroll-view scroll-y="true" style="height: 358px;">
+      <block wx:if="{{cartList.length>0}}">
+        <view class="goods-cart-list clearfix" wx:for="{{cartList}}" wx:key="index">
+          <view class="goods-cart-title ellipsis">{{item.title}}</view>
+          <view class="goods-cart-price ellipsis">￥{{item.price}}</view>
+          <view class="goods-cart-operate">
+            <view class="goods-minus" bindtap="goodsMinus" wx:if="{{item.number>0}}" data-id="{{item.id}}">-</view>
+            <view class="goods-number ellipsis" wx:if="{{item.number>0}}">{{item.number}}</view>
+            <view class="goods-plus" bindtap="goodsPlus" data-id="{{item.id}}">+</view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="empty-cart">
+          <image src="/images/empty_cart.png" mode="widthFix"></image>尽情挑选您的爱品吧！
+        </view>
+      </block>
+
+    </scroll-view>
+  </view>
+</view>
+
+<template is="authModalMask" data="{{isAuth,canIUse,authTitle,authSubTitle}}" />
+<template is="phoneModalMask" data="{{isPhone,authTitle,phoneSubTitle,checkStatus}}" />

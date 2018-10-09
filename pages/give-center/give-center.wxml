@@ -1,0 +1,29 @@
+<view class='card-bag' style='padding-bottom: 120rpx;'>
+
+  <text class='card-bag-title' style='display: block;'>我的存酒卡</text>
+  <block wx:for="{{stList}}" wx:for-item="list" wx:for-index='index'>
+    <view class='card-bag-con'>
+      <view class='card-bag-bg'>
+        <image src='{{imgUrl+list.icon}}'></image>
+        <view class='card-bag-desc'>
+         <text class='card-bag-title-text'>{{list.title}}</text>
+          <text class='card-bag-price'>可转赠 {{list.amount}} 瓶</text>
+        </view>
+        <view class='card-bag-option'>
+          <button class='card-bag-option-btn' data-type="{{list.type}}" data-amount="{{list.amount}}" data-title="{{list.title}}" bindtap='giveAs'>一键转赠</button>
+        </view>
+      </view>
+      <view class='card-bag-deadline' data-type="{{list.type}}" data-amount="{{list.amount}}" data-title="{{list.title}}" data-icon="{{list.icon}}" data-time="{{list.end_time}}" data-parvalue="{{list.par_value}}" bindtap='goToVipCardDetail'>
+        <text wx:if="{{list.par_value>0}}">有<text style='color: #ff2419'>{{list.par_value}}瓶</text>存酒{{list.end_time}}号到期,</text>
+        <text wx:else> 没有到期的相关酒卡</text>
+        <text class="see-notice">查看使用说明</text>
+        <text class='iconfont icon-gengduo1'></text>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class='card-check'>
+  <!-- <text style='background:#fd3152' bindtap="goToCardRecord">查看用卡记录</text> -->
+  <text style='width:100%;background:#ff8519;' bindtap="goToCardDetail">查看领赠记录</text>
+</view>

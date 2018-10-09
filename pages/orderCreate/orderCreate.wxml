@@ -1,0 +1,47 @@
+<view class="order-create">
+  <view class="order-header">
+    <view class="order-store-info">
+      <view class="order-store-name ellipsis">{{storeInfo.storesname}}</view>
+      <view class="order-store-room ellipsis">{{roomInfo.name+' - '+roomInfo.roomname}}</view>
+    </view>
+    <!-- <view class="order-person-number">
+      <view class="section clearfix">
+        <view class="section-title">包厢人数</view>
+        <picker class="section-body" bindchange="bindPickerChange" value="{{perNum}}" range="{{perArrNum}}">
+          <view class="picker">
+            {{perNum}}
+          </view>
+        </picker>
+      </view>
+      <input class="input-person-num" type="number" maxlength="2" bindinput="changePersonNum" placeholder="请填写人数" placeholder-class="placeholder-input-person-num" hidden="{{maxPerson!=index}}">人</input>
+    </view> -->
+  </view>
+  <view class="order-panel">
+    <view class="order-panel-header">共{{item.totalNumber}}件商品</view>
+    <view class="order-panel-body">
+
+      <view class="order-goods-list clearfix" wx:for="{{goodsList}}" wx:key="index">
+        <view class="order-goods-image">
+          <image src="{{item.image?imgUrl+item.image:'/images/default_img.jpg'}}" mode="widthFix"></image>
+        </view>
+        <view class="order-goods-info">
+          <view class="order-goods-info-title ellipsis">{{item.title}}</view>
+          <view class="order-goods-info-price-num">
+            <view class="order-goods-info-number">X {{item.number}}</view>
+            <view class="order-goods-info-price">￥ {{item.price}}</view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <view class="order-panel-discount"></view>
+    <view class="order-panel-footer">总计：￥{{item.totalPrice}}</view>
+  </view>
+</view>
+<view class="order-footer clearfix">
+  <view class="order-settlement">应付：
+    <text class="order-final-money">￥ {{item.totalMoney}}</text>
+    <text>(已优惠 {{0}} 元)</text>
+  </view>
+  <button class="order-creat-pay" hover-class="order-creat-pay-active" bindtap="orderCreatePay">下单并支付</button>
+</view>

@@ -1,0 +1,21 @@
+<view class="sort-search">
+    <input type="text" placeholder="请输入搜索的门店" bindinput="searchKey" placeholder-class="search-placeholder" bindconfirm="searchTap" auto-focus></input>
+    <button formType="submit" catchtap="searchTap">搜索</button>
+</view>
+<view class="funny">
+    <view class="funny-store-list" wx:for="{{storeList}}" wx:for-item="store" wx:for-index="idx">
+        <view class="funny-store" bindtap="funnyStoreTap" data-storeId="{{store.id}}" data-storesname="{{store.storesname}}">
+            <image class="funny-store-img" src="{{imgUrl + store.banner}}"></image>
+            <view class="funny-store-desc">
+                <text class="funny-store-title ellipsis">{{store.storesname}}</text>
+                <text class="funny-store-discount ellipsis" decode="{{true}}">{{store.address}}</text>
+                <view class="funny-store-sign">
+                    <text>环境好</text>
+                    <text>服务好</text>
+                    <text>价格实惠</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

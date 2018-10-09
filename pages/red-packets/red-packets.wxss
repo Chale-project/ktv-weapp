@@ -1,0 +1,344 @@
+@import '../template/template.wxss';
+
+page {
+  background: linear-gradient(to bottom, rgba(253, 155, 0, 1), rgba(255, 237, 33, 1));
+}
+
+.red-packets {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.robbing-packets {
+  background: url('http://p.whhykj.cn/r_wechat_image/red_packets_bg.png') top center no-repeat;
+  background-size: cover;
+}
+
+.robbing-packets.robbing-packets-success {
+  background: url(http://p.whhykj.cn/r_wechat_image/red_packets_success_bg.jpg) top center no-repeat;
+  background-size: cover;
+}
+
+.robbing-packets.robbing-packets-fail {
+  background: url(http://p.whhykj.cn/r_wechat_image/red_packets_bg.png) top center no-repeat;
+  background-size: cover;
+}
+
+.red-packets-container {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 320px;
+  margin: 120px 30px 0;
+  padding: 60px 30px 20px;
+  border-radius: 6px;
+  background-image: url(http://p.whhykj.cn/h_wechat_image/hongbao.png);
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.robbing-packets-success .red-packets-container {
+  min-height: 310px;
+  margin: 200px 30px 0;
+  padding: 20px 30px 0;
+  background: url(http://p.whhykj.cn/h_wechat_image/hongbaoopen.png) top center no-repeat;
+  background-size: cover;
+}
+
+.robbing-packets-fail .red-packets-container {
+  min-height: 310px;
+  padding: 20px 30px 0;
+  background: url(http://p.whhykj.cn/h_wechat_image/hongbaoopen.png) top center no-repeat;
+  background-size: cover;
+}
+
+.red-packets-title {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+}
+
+.red-packets-sub-title {
+  color: #ffb6b4;
+  text-align: center;
+}
+
+.red-packets-form {
+  padding: 15px 0 50px;
+}
+
+.red-packets-form .weui-cells {
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+
+.red-packets-form .weui-cells::before, .red-packets-form .weui-cells::after {
+  border: 0;
+}
+
+.red-packets-form .weui-cells input {
+  font-size: 15px;
+}
+
+.weui-vcode-btn {
+  width: 95.5px;
+  color: #eb2d27;
+  background: #fed61a;
+  font-size: 15px;
+  border-radius: 0;
+}
+
+.btn-open-red-packets {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 20px;
+  margin-top: 15px;
+  color: #eb2d27;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, rgba(255, 238, 95, 1), rgba(246, 211, 71, 1));
+}
+
+.user-avatar {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background: #fd483d;
+  border-radius: 50%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.user-name {
+  text-align: center;
+  color: #ffee5f;
+}
+
+.robbed-success-content {
+  margin-bottom: 45px;
+  text-align: center;
+  color: #ffed5e;
+}
+
+.robbed-success-title {
+  font-size: 24px;
+}
+
+.your-account {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.modify-account {
+  color: #ffed5e;
+}
+
+.robbed-success-button {
+  display: flex;
+}
+
+.btn-robbed-record {
+  flex: 1;
+  margin-right: 5px;
+  color: #eb2d27;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, rgba(255, 238, 95, 1), rgba(246, 211, 71, 1));
+}
+
+.btn-robbed-giveas {
+  flex: 1;
+  margin-left: 5px;
+  background-color: transparent;
+  border: 1px solid #fde859;
+  color: #fde95a;
+}
+
+.robbed-fail-content {
+  margin-bottom: 75px;
+  text-align: center;
+  color: #fff;
+}
+
+.robbed-fail-title {
+  font-size: 24px;
+}
+
+.robbed-fail-detail {
+  opacity: 0.7;
+}
+
+.activity-rule {
+  margin: 15px 30px 10px;
+  overflow: hidden;
+}
+
+.activity-rule-title {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  padding: 15px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  color: #eb2d27;
+  border-radius: 4px;
+  background: rgba(243, 217, 172, 0.5);
+}
+
+.activity-rule-contents {
+  height: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding: 10px 15px;
+  background: rgba(243, 217, 172, 0.5);
+}
+
+.activity-rule-contents.show-detail {
+  height: auto;
+  opacity: 1;
+  color: #eee;
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+}
+
+.red-packets-container-fail .btn-robbed-giveas {
+  flex: 1;
+  color: #eb2d27;
+  border: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, rgba(255, 238, 95, 1), rgba(246, 211, 71, 1));
+}
+
+/*弹出层  */
+
+.show-btn {
+  margin-top: 50px;
+  color: #222;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog-share {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: right;
+  z-index: 9010;
+  overflow: hidden;
+}
+
+.modal-dialog-share image {
+  margin-right: 65px;
+}
+
+.red-record {
+  position: fixed;
+  box-sizing: border-box;
+  height: 450px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: -500px;
+  background: #f1f1f1;
+  z-index: 9010;
+}
+
+.red-record-close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -15px;
+  right: 5px;
+}
+
+.red-record-header {
+  padding: 15px;
+  text-align: center;
+  font-size: 16px;
+  color: #222;
+  background: #fff;
+}
+
+.red-record-body {
+  padding: 10px 15px;
+  background: #f1f1f1;
+}
+
+.red-record-list {
+  padding: 6px 0;
+  border-bottom: 0.5px solid #ddd;
+}
+
+.red-record-avatar {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin: 10px 10px 0 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.red-record-info {
+  width: calc(100% - 160px);
+  float: left;
+}
+
+.red-record-nickname {
+  padding: 5px 5px 0 0;
+}
+
+.red-record-time {
+  color: #999;
+}
+
+.red-record-val {
+  width: 120px;
+  float: left;
+  padding: 10px 0;
+  text-align: right;
+  color: #ee2b46;
+  font-size: 16px;
+}
+
+.but-close {
+  width: 25px;
+  height: 25px;
+  padding: 2.5px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* 授权按钮 */
+.user-btn{
+  width: 300rpx;
+  height: 80rpx;
+  margin-top: 300rpx;
+  margin-left: 225rpx;
+  background: #ff7800;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 80rpx;
+}
+
+

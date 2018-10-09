@@ -1,0 +1,125 @@
+@import "../../utils/iconfont.wxss";
+.card-bag {
+  padding: 30rpx;
+}
+
+.card-bag-title {
+  font-size: 30rpx;
+  color: #222;
+  font-weight: 700;
+}
+.qingdao{
+ color:#999;
+ font-size:14px; 
+}
+.card-bag-con{
+  width: 690rpx;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20rpx 20rpx 0 0;
+  background: #fff;
+  margin-top: 20rpx;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border: 1rpx solid #ddd;
+}
+
+.card-bag-bg {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-bag-deadline{
+  color: #999;
+  font-size: 22rpx;
+  margin: 20rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.card-bag-bg image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin: 35rpx 20rpx 0 30rpx;
+}
+
+.card-bag-desc{
+  display: flex;
+  flex-direction: column;
+  margin-top: 25rpx;
+  width: 350rpx;
+}
+
+.card-bag-title-text{
+  font-size: 36rpx;
+}
+
+.card-bag-price{
+  font-size: 28rpx;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+
+
+
+.card-bag-option{
+  width: 180rpx;
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-bag-option-btn{
+  width: 180rpx;
+  height: 70rpx;
+  background: -moz-linear-gradient(left, #f9c100, #fe8300);
+  background: -webkit-linear-gradient(left, #f9c100, #fe8300);
+  background: -o-linear-gradient(left, #f9c100, #fe8300);
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 40rpx;
+  color: #fff;
+}
+
+.card-bag-option-desc{
+  display: flex;
+  flex-direction: row;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+.see-notice{
+padding-left: 10px;
+}
+
+.iconfont{
+  font-size: 20rpx;
+}
+
+.card-check{
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  width: 100%
+}
+
+.card-check text{
+  width: 50%;
+  display: inline-block;
+  font-size: 30rpx;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #fff;
+}
+
+.nodata-list{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}

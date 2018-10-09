@@ -1,0 +1,261 @@
+@import '../template/template.wxss';
+@import "../../utils/iconfont.wxss";
+
+.user-center {
+}
+
+.user-info, .user-code-card, .user-share-coupon, .user-order {
+  position: relative;
+  margin-bottom: 10px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(221, 221, 221, 0.6);
+}
+
+.user-info, .user-card {
+  padding: 10px 20px 10px 15px;
+  box-shadow: none;
+}
+
+.user-info::after, .user-card::after, .user-order-header::after {
+  font-family: "iconfont" !important;
+  font-size: 20px;
+  content: '\e656';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-decoration: none;
+  color: #b1692f;
+  -webkit-font-smoothing: antialiased;
+}
+
+.user-info-top {
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-avatar-name-mobile {
+  width: calc(100% - 120px);
+  display: flex;
+  margin-right: 10px;
+  flex: 2;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-name-mobile {
+  width: calc(100% - 50px);
+  overflow: hidden;
+}
+
+.user-name {
+  width: 100%;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.user-mobile {
+  width: 100%;
+  color: #444;
+  font-size: 12px;
+}
+
+.user-interests {
+  flex: 1;
+  margin-top: 4px;
+}
+
+.btn-user-interests {
+  border: 0;
+  border-radius: 0 !important;
+  color: #b1692f !important;
+  background: none;
+  padding: 0;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.user-expiry-date {
+  color: #2d2d2d;
+}
+
+.user-code {
+  display: flex;
+  padding: 15px;
+  border-bottom: 0.5px solid #ddd;
+}
+
+.user-code-left {
+  position: relative;
+  flex: 1;
+}
+
+.user-code-left::after, .user-share::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 30px;
+  top: 10px;
+  right: 1px;
+  background: #ddd;
+}
+
+.user-code-number {
+  font-size: 24px;
+  color: #111;
+}
+
+.user-code-tips {
+  color: #666;
+}
+
+.user-code-right {
+  flex: 1;
+  padding-top: 5px;
+}
+
+.btn-toggle-code {
+  float: right;
+  font-size: 15px;
+  background: #ff8519;
+  color: #fff;
+}
+
+.btn-toggle-code-active {
+  background: rgba(255, 131, 25, 0.6);
+}
+
+.user-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+.user-card::after {
+  color: #111;
+}
+
+.user-card-name {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.user-icon, .user-icon image {
+  width: 20px;
+  height: 20px;
+}
+
+.user-card-sub-name {
+  flex: 1;
+  text-align: right;
+  color: #fc3824;
+}
+
+.user-share-coupon {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+}
+
+.user-share, .user-coupon {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.user-coupon {
+  padding-left: 5px;
+}
+
+.user-share-content, .user-coupon-content {
+  width: calc(100% - 34px);
+  padding-left: 10px;
+}
+
+.user-share-money, .user-coupon-val {
+  color: #fc3824;
+}
+
+.user-share-title, .user-coupon-title {
+  color: #222;
+  font-size: 14px;
+}
+
+.user-order-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 28px 6px 15px;
+}
+
+.user-order-header::after, .user-order-sub-title {
+  color: #666;
+}
+
+.user-order-title {
+  color: #333;
+}
+
+.user-order-content .weui-grids {
+  border-left: 0;
+}
+
+.user-order-content .weui-grid {
+  width: 33.33333%;
+  padding: 15px 10px;
+  border-right: 0;
+}
+
+.user-order-content .weui-badge {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.user-others {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #111;
+  padding: 35rpx 30rpx;
+  background-color: white;
+  border-bottom: 1px solid rgba(221, 221, 221, 0.6);
+}
+
+.serviceBtn {
+  background-color: transparent;
+  width: 100%;
+  height: 118rpx;
+  top: -120rpx;
+}
+
+.next, .coin {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.coin {
+  margin-right: 20rpx;
+}

@@ -1,0 +1,58 @@
+<import src="../template/template.wxml" />
+
+<!--donation.wxml-->
+<view class="page donation">
+  <view class="donation-step-first">
+    <view class="donation-step-title">第一步：请输入赠送数量</view>
+    <view class="weui-cells weui-cells_after-title donation-step-input">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">{{title}}
+            <text> (剩余{{num}}瓶)</text>
+          </view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="number" maxlength="6" placeholder="填写赠送数量" bindinput="bindInputNumber" />
+        </view>
+        <view class="weui-cell__ft">
+          <text>瓶</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="donation-step-second">
+    <view class="donation-step-title">第二步：请输入拆分成份数</view>
+    <view class="weui-cells weui-cells_after-title donation-step-input">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">拆分份数<text class="limit-parts">(最大只能拆分{{maxParts}}份)</text></view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="number" maxlength="2" placeholder="填写份数" bindinput="bindInputParts" />
+        </view>
+        <view class="weui-cell__ft">
+          <text>份</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='userRule'>
+   <view>使用说明:</view>
+   <view>1、点击“送给朋友”，系统会自动从您的账户扣除酒水</view>
+   <view>2、保存赠送图片，发送给您的朋友微信，或者微信群，您朋友微信识别二维码即可领取</view>
+   <view>3、如果您朋友在30分钟内没有领取，酒水会自动返回到您的账户。</view>
+   <view>感谢您的使用！</view>
+  </view>
+
+  <view class="but-donation-block">
+    <view class="donation-info">
+      <view>共赠送 {{number}} {{title}}</view>
+      <view class="split-number">拆分成 {{parts}} 份</view>
+    </view>
+    <button class="but-default but-donation" hover-class="but-default-active" bindtap="setShareRedPackets" disabled="{{disabled}}">送给朋友</button> 
+  </view>
+</view>
+
+
+<template is="shareModalMask" data="{{isShow,shareQrcodeImg}}" />

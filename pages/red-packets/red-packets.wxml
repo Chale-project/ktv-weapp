@@ -1,0 +1,104 @@
+<import src="../template/template.wxml" />
+
+<!--red-packets.wxml-->
+<view class="page red-packets robbing-packets {{redPacketsInfo.redPacketsStatus==1?'robbing-packets-success':''}} {{redPacketsInfo.redPacketsStatus==2?'robbing-packets-fail':''}}">
+  <block wx:if="{{redPacketsInfo.redPacketsStatus==0}}">
+    <!--未领取  -->
+    <view class="red-packets-container">
+      <view class="user-info">
+        <view class="user-avatar">
+          <image src="{{redPacketsInfo.avatar}}" style="width:50px;height:50px;border-radius: 50%;" mode="aspectFit"></image>
+        </view>
+        <view class="user-name">{{redPacketsInfo.nickname}}</view>
+      </view>
+      <view class="red-packets-title">向你扔来一个红包</view>
+      <view class="red-packets-sub-title">看看你能抢到多少？</view>
+
+      <button class="but-default btn-open-red-packets" hover-class="but-default-active" bindtap="openRedPackets">打开红包</button>
+
+    </view>
+  </block>
+
+  <block wx:elif="{{redPacketsInfo.redPacketsStatus==1}}">
+
+    <!--领取成功  -->
+    <view class="red-packets-container red-packets-container-success">
+      <view class="user-info">
+        <view class="user-avatar">
+          <image src="{{redPacketsInfo.avatar}}" style="width:50px;height:50px;border-radius: 50%;" mode="aspectFit"></image>
+        </view>
+        <view class="user-name">{{redPacketsInfo.nickname}}</view>
+      </view>
+      <view class="robbed-success-content">
+        <view class="robbed-success-title">{{hints}}</view>
+        <view class="robbed-success-detail">抢到 {{get_number+' 瓶 '+redPacketsInfo.title}}！</view>
+      </view>
+      <view class="your-account">奖励已存入账户：{{redPacketsInfo.mobile}}
+        <!-- <text class="modify-account" bindtap="modifyAccount">修改 ></text> -->
+      </view>
+      <view class="robbed-success-button">
+        <button class="but-default btn-robbed-record" hover-class="but-default-active" bindtap="robbedRecord">查看领取</button>
+        <button class="but-default btn-robbed-giveas" hover-class="but-default-active" bindtap="robbedGiveas">返回首页</button>
+      </view>
+    </view>
+  </block>
+
+  <block wx:elif="{{redPacketsInfo.redPacketsStatus==2}}">
+    <!--领取失败  -->
+    <view class="red-packets-container red-packets-container-fail">
+      <view class="user-info">
+        <view class="user-avatar">
+          <image src="{{redPacketsInfo.avatar}}" style="width:50px;height:50px;border-radius: 50%;" mode="aspectFit"></image>
+        </view>
+        <view class="user-name">{{redPacketsInfo.nickname}}</view>
+      </view>
+      <view class="robbed-fail-content">
+        <view class="robbed-fail-title">来晚了红包已领光！</view>
+        <view class="robbed-fail-detail">一共发出{{redPacketsInfo.num}}个红包！</view>
+      </view>
+      <view class="robbed-fail-button">
+        <button class="but-default btn-robbed-giveas" hover-class="but-default-active" bindtap="robbedGiveas">我来发一个</button>
+      </view>
+    </view>
+  </block>
+
+  <view class="activity-rule">
+    <view class="activity-rule-title" bindtap="showDetailToggle">活动规则
+      <image src="/images/show_detail.png" style="width:20px; height:20px;"></image>
+    </view>
+    <view class="activity-rule-contents {{open ? 'show-detail' : ''}}">
+      <view>1. 红包新老用户同享；</view>
+      <view>2. 红包仅在欢唱时代联盟商家使用；</view>
+      <view>3. 消费时以抢红包绑定的欢唱时代注册手机号为核销账号；</view>
+      <view>4. 转赠的红包1小时内未被领取将会自动退回原账户。</view>
+    </view>
+  </view>
+
+</view>
+
+<!--弹窗-->
+<view class="modal-mask" catchtouchmove="preventTouchMove" hidden="{{showRecordModal}}" bindtap="hideRedRecord"></view>
+<view animation="{{animationData}}" class="red-record">
+  <view class="red-record-close">
+    <image class="but-close" src="/images/more_icon.png" bindtap="hideRedRecord"></image>
+  </view>
+  <view class="red-record-header">看看大家手气</view>
+  <view class="red-record-body">
+    <scroll-view scroll-y style="height: 375px;" lower-threshold="50" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+      <view class="red-record-list clearfix" wx:for="{{recordList}}" wx:for-item="list">
+        <view class="red-record-avatar">
+          <image src="{{list.headimgurl?list.headimgurl:'/images/icon/huiyunzhognx.png'}}" style="width:30px;height:30px;" mode="aspectFit"></image>
+        </view>
+        <view class="red-record-info">
+          <view class="red-record-nickname ellipsis">{{list.nickname}}</view>
+          <view class="red-record-time">{{list.recive_time}}</view>
+        </view>
+        <view class="red-record-val">{{list.amount}}</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+
+<template is="authModalMask" data="{{isAuth,canIUse,authTitle,authSubTitle}}" />
+<template is="phoneModalMask" data="{{isPhone,authTitle,phoneSubTitle}}" />

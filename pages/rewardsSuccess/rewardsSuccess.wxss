@@ -1,0 +1,34 @@
+.sucess{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sucess-coin{
+  width: 237rpx;
+  height: 236rpx;
+  margin-top: 130rpx;
+  margin-left: calc(50% - 118rpx);
+}
+.sucess-money{
+  color: #fd652c;
+  font-size: 13px;
+   margin-top: 40rpx;
+   text-align: center;
+}
+.sucess-shop{
+  color: #9a9a9a;
+  font-size: 13px;
+   margin-top: 10rpx;
+   margin-bottom: 120rpx;
+   text-align: center;
+}
+.return-home{
+  color: white;
+  font-size: 13px;
+  padding: 3px 70px;
+  border-radius: 20px;
+   background: -webkit-linear-gradient(#ff784b, #ff3911);
+  background: -o-linear-gradient(#ff784b, #ff3911);
+  background: -moz-linear-gradient(#ff784b, #ff3911);
+  background: linear-gradient(#ff784b, #ff3911); 
+}

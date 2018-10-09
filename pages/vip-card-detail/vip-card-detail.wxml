@@ -1,0 +1,38 @@
+<!--vip-card.wxml-->
+<view class="page vip-card-detail">
+  <view class="vip-card-face">
+    <view class="vip-card-info">
+      <view class="vip-card-thumb">
+        <image src="{{imgUrl+cardInfo.icon}}" mode="aspectFit"></image>
+      </view>
+      <view class="vip-card-title-val">
+        <view class="vip-card-title ellipsis">{{cardInfo.title}}</view>
+        <view class="vip-card-val ellipsis">共有{{cardInfo.amount}}存酒</view>
+      </view>
+    </view>
+    <view class="curve"></view>
+  </view>
+
+  <view class="vip-card-desc">
+    <view class="expiry-date-val">有{{cardInfo.par_value}}{{cardInfo.title}}过期时间为：{{cardInfo.time}}</view>
+    <view class="vip-card-desc-title">使用说明</view>
+    <view class="vip-card-desc-content">
+      <block wx:if="{{cardInfo.type==1}}">
+        <view>彩色沙漠</view>
+        <view>1. 1000元=500瓶彩色沙漠</view>
+        <view>2. 此卡在线下门店进行充值，并可在联盟商家跨店消费</view>
+        <view>3. 有效期为90天，到期后将自动扣除</view>
+        <view>4. 啤酒可进行转赠，没有人领取将在30分钟后返回原账户</view>
+      </block>
+
+      <block wx:elif="{{cardInfo.type==9}}">
+        <view>精品干红</view>
+        <view>1. 充值1000元得10瓶精品干红消费</view>
+        <view>2. 此卡可在线上或线下进行充值，并可在联盟商家跨店消费</view>
+        <view>3. 有效期为180天，到期后自动扣除</view>
+        <view>4. 可进行转赠，没有人领取将30分钟后返回原账户</view>
+      </block>
+
+    </view>
+  </view>
+</view>

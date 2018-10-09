@@ -1,0 +1,6 @@
+<view class="section">
+  <form bindsubmit="bindFormSubmit">
+    <textarea placeholder="请输入您想吐槽的任何内容..." name="textarea"/>
+    <button form-type="submit"> 提交 </button>
+  </form>
+</view>

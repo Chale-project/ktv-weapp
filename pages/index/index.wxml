@@ -1,0 +1,134 @@
+<import src="../template/template.wxml" />
+
+<view class="index-container">
+
+  <!-- 顶部搜索 -->
+  <view class="search" bindtap="searchFocus">
+    <view class="search-view">搜门店</view>
+    <image class="search-icon" src="/images/seacrh_icon.png" hidden="{{showSearchIcon}}"></image>
+  </view>
+
+  <!-- 活动banner -->
+  <template is="swiperTemplate" data="{{indicatorDots:indicatorDots,autoplay:autoplay,interval:interval,duration:duration,indicatorColor:indicatorColor,indicatorActiveColor:indicatorActiveColor,imgUrl:imgUrl,activityList:activityList}}" />
+
+  <!-- 模块入口 -->
+  <view class="module">
+    <view class="entrance" wx:for="{{menuList}}" wx:for-index="idx" wx:for-item="menu" bindtap="moduleTap" data-moduleurl="{{menu.forward_location}}" data-moduletype="{{menu.type}}">
+      <image src="{{imgUrl+menu.image}}"></image>
+      <text>{{menu.alt}}</text>
+      <block wx:if='{{idx==3}}'>
+        <button class='tokein' open-type="contact" session-from="weapp"></button>
+      </block>
+    </view>
+  </view>
+
+  <!-- 核销码 -->
+  <view class='home-codeView'>
+    <view class="merchant-title" bindtap='toggleCode'>
+      <image class='code-img' src="/images/fresh.png" style='width:24rpx;height:24rpx'></image>
+      <text>点击查看核销码</text>
+    </view>
+    <!-- <text class='home-code'>{{isShowCode?'******':usercode}}</text> -->
+    <text class='home-code'>{{toggleExtractCode?'******':usercode}}</text>
+    <!-- <text class='freshcode'>刷新</text> -->
+  </view>
+
+
+
+  <!-- 附近商家 -->
+  <view class="merchant">
+    <view class="merchant-title">
+      <image src="/images/pinpai.png"></image>
+      <text>联盟商家</text>
+    </view>
+    <block wx:for="{{NearbyShop}}" wx:for-index="idx" wx:for-item="shop">
+      <view class="nearby-shops-box">
+        <view class="nearby-shops-con" bindtap="linkTap" data-shopid='{{shop.relation_id}}' data-shopname='{{shop.store_name}}'>
+          <image class="nearby-shops-img" src="{{imgUrl + shop.image}}"></image>
+          <view class="nearby-shops-desc">
+            <text class="nearby-shops-desc-title">{{shop.store_name}}</text>
+            <view class="nearby-shops-discount ellipsis">
+              <text>环境好</text>
+              <text>服务好</text>
+              <text class="distance">{{shop.distance}}km</text>
+            </view>
+            <view class="nearby-shops-tel">{{shop.phone}}</view>
+          </view>
+        </view>
+        <view class="nearby-shops-add-nav clearfix">
+          <view class="nearby-shops-address">地址：{{shop.address}}</view>
+          <view class="nearby-shops-navigation" data-name="{{shop.store_name}}" data-latitude="{{shop.latitude}}" data-longitude="{{shop.longitude}}" bindtap="openNavigation">使用导航</view>
+        </view>
+      </view>
+      <view class="nearby-shops-funny" wx:if="{{shop.member_list.length>0}}" wx:for="{{shop.member_list}}" wx:for-item="memberList" wx:for-index="goods">
+        <view class="funny-coupon">
+          <view class="funny-coupon-desc">
+            <view class="funny-coupon-desc-all ellipsis">
+              <text class="funny-coupon-desc-sign">卡</text>
+              <text class="funny-coupon-desc-price">￥{{memberList.buy_money}}</text>
+              <text class="funny-coupon-desc-title">{{memberList.name}}</text>
+            </view>
+            <text class="funny-coupon-origin-share-price">邀请好友送￥{{memberList.share_award}}</text>
+          </view>
+          <view class="funny-coupon-click">
+            <text class="funny-coupon-btn" bindtap="memberCardTap" data-cardid='{{memberList.id}}' data-shopId='{{shop.relation_id}}' data-storesname='{{shop.store_name}}'>抢购</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="nearby-shops-funny" wx:if="{{shop.active_list.length>0}}" wx:for="{{shop.active_list}}" wx:for-item="activeList" wx:for-index="goods">
+        <view class="funny-coupon">
+          <view class="funny-coupon-desc">
+            <view class="funny-coupon-desc-all ellipsis">
+              <text class="funny-coupon-desc-sign">惠</text>
+              <text class="funny-coupon-desc-price">￥{{activeList.recharge_money}}</text>
+              <text class="funny-coupon-desc-title">{{activeList.title}}</text>
+            </view>
+            <!-- <text class="funny-coupon-origin-price">送{{activeList.card_amount}}</text> -->
+          </view>
+          <view class="funny-coupon-click">
+            <text class="funny-coupon-btn" bindtap="reserveTap" data-shopId='{{shop.relation_id}}' data-storesname='{{shop.store_name}}'>充值</text>
+          </view>
+        </view>
+      </view>
+
+    </block>
+
+  </view>
+</view>
+
+
+<!-- 订房弹窗-->
+<view class='bookFrame' hidden='{{isHide}}'>
+  <view class='bookView' animation="{{animation}}">
+    <text class='title'>选择门店</text>
+    <image class='close' src='/images/cloce.png' bindtap='closeBuy'></image>
+    <scroll-view scroll-y class='scrollView'>
+      <view class='shop-list'>
+        <block wx:for='{{NearbyShop}}' wx:for-index='index'>
+          <view class='shop-item' data-index='{{index}}' bindtap="reserveTap" data-shopId='{{item.relation_id}}' data-storesname='{{item.store_name}}'>
+            <image class='shop-img' src='{{imgUrl + item.image}}'></image>
+            <view class='shop-right'>
+
+              <view class='shop-right-top'>
+                <text class='shop-top-name ellipsis-2'>{{item.store_name}}</text>
+                <text class='shop-top-distance'>{{item.distance}} km</text>
+              </view>
+
+              <view class='shop-right-bot'>
+                <text class='shop-bot-add ellipsis-2'>{{item.address}}</text>
+              </view>
+
+            </view>
+
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+
+
+<template is="authModalMask" data="{{isAuth,canIUse,authTitle,authSubTitle}}" />
+<template is="phoneModalMask" data="{{isPhone,authTitle,phoneSubTitle,checkStatus}}" />

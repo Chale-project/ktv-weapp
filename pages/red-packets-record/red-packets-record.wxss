@@ -1,0 +1,56 @@
+.red-packets-record-time {
+  position: fixed;
+  padding: 10px 15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  background: #f1f1f1;
+}
+
+.red-packets-record-content {
+  margin-top: 50px;
+}
+
+.red-packets-record-list .weui-cell__bd {
+  width: 65%;
+}
+
+.red-packets-record-list .weui-cell__ft {
+  width: 30%;
+  padding-left: 5px;
+}
+
+.red-packets-record-list-title {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #151515;
+}
+
+.red-packets-record-list-time {
+  font-size: 12px;
+  color: #999;
+}
+
+.record-plus {
+  margin-bottom: 5px;
+  color: #398de3;
+}
+
+.record-minus {
+  margin-bottom: 5px;
+  color: #f00;
+}
+
+.record-from-what {
+  font-size: 12px;
+  color: #666;
+}
+
+.weui-loadmore.weui-loadmore_line {
+  margin-top: 3.4em;
+}
+
+.weui-loadmore__tips_in-line {
+  background: #f1f1f1;
+}

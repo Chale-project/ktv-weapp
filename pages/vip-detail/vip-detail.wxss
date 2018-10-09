@@ -1,0 +1,52 @@
+.vip-detail-header {
+  padding: 20px 30px 50px;
+  text-align: center;
+  background: #454a54;
+}
+
+.vip-detail-avatar {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ff9800;
+  margin: 10px auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.vip-detail-avatar image {
+  width: 100%;
+}
+
+.vip-detail-mobile {
+  color: #ff9800;
+}
+
+.vip-detail-content {
+  position: relative;
+  margin-top: -40px;
+}
+
+.vip-detail-content-bg {
+  padding: 20px 0;
+  background-image: url('http://p.whhykj.cn/w_wechat_image/w.png');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.vip-detail-content-con {
+  min-height: 50px;
+  padding: 30px;
+  background: #fff;
+}
+
+.is-vip-detail{
+  text-align: center;
+  padding: 20px 0;
+  font-size: 28px;
+  color: #ff9800;
+}
+.goto-vip-card {
+  color: #fff;
+  background: #ff6037;
+}

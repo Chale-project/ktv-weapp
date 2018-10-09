@@ -1,0 +1,121 @@
+<view class='rewardView'>
+  <!--顶部-->
+  <view class='reward-orgView'>
+
+    <view class='reward-topView'>
+      <view class='topView-left'>
+        <text class='topView-money'>{{wtInfo.moneycount==null?0 : wtInfo.moneycount}}</text>
+        <text class='topView-lab' wx:if="{{rStatus==0}}">请先到门店领取上一笔提现</text>
+        <text class='topView-lab' wx:else>剩余可提现金额{{wtInfo.istixian==null?0:wtInfo.istixian}}元，已提现{{wtInfo.tixiancountLog==null?0:wtInfo.tixiancountLog}}</text>
+      </view>
+
+      <view class='topView-right'>
+        <button class='apply' bindtap='rewardAction' data-status='{{rStatus}}'>{{rStatus==0? "已申请提现" : "申请提现"}}</button>
+      </view>
+
+    </view>
+
+    <view class='reward-downView'>
+      <view class='reward-downView-left'>
+        <image class='reward-coin' src='/images/renshu.png'></image>
+        <view class='numView'>
+          <text class='number'>{{wtInfo.usercount}}</text>
+          <text class='rewardLab'>累计邀请人数</text>
+        </view>
+      </view>
+
+      <view class='reward-downView-left'>
+        <image class='reward-coin' src='/images/yongjin.png'></image>
+        <view class='numView'>
+          <text class='number'>{{wtInfo.tixiancount==null? 0 : wtInfo.tixiancount}}</text>
+          <text class='rewardLab'>累计佣金</text>
+        </view>
+      </view>
+
+
+    </view>
+
+  </view>
+
+
+
+  <!--分享佣金记录-->
+  <view class='record-sign'>分享佣金记录</view>
+
+
+  <view class='recordView'>
+    <block wx:for='{{awardList}}' wx:for-index='index'>
+      <view class='record-item'>
+        <view class='item-left'>
+          <image class='head' src='{{item.headimgurl}}'></image>
+          <view class='item-nickView'>
+            <text class='nick'>{{item.nickname}}</text>
+            <text class='time'>{{item.time}}</text>
+          </view>
+        </view>
+
+        <view class='item-right'>
+          <text class='item-money'>+{{item.award}}</text>
+          <text class='item-title'>{{item.buy_money}}{{item.name}}</text>
+        </view>
+
+      </view>
+    </block>
+  </view>
+
+ <view class='reward-record'>
+  <button class='recordLog' bindtap='rewardReward'>提现记录</button>
+ </view>
+
+</view>
+
+ <view class="modal-mask" catchtouchmove="preventTouchMove" hidden="{{showRecordModal}}" bindtap="hideRedRecord"></view>
+  <view animation="{{animationData}}" class="red-record">
+    <view class="red-record-close">
+      <image class="but-close" src="/images/more_icon.png" bindtap="hideRedRecord"></image>
+    </view>
+    <view class="red-record-header">申请提现</view>
+    <view class="red-record-body">
+      <scroll-view scroll-y style="height: 375px;" lower-threshold="50" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+        <view class="red-record-list clearfix" wx:for="{{rewardList}}" wx:for-item="list">
+        <block wx:if='{{eventLog==1}}'>
+          <view class="red-record-info">
+            <view class="red-record-m ellipsis">{{list.award}}元</view>
+            <view class="red-record-storesname">{{list.storesname}}</view>
+          </view>
+           
+          <view class="red-record-val">
+
+           <block wx:if='{{list.award>0}}'>
+            <text class='red-record-status' bindtap='toShopReward' data-storeid='{{list.store_id}}' data-storesname='{{list.storesname}}' data-money='{{list.award}}'>申请提现</text>
+           </block>
+            <block wx:else>
+            <text class='red-record-unstatus'>申请提现</text>
+            </block>
+
+          </view>
+         </block>
+
+         <block wx:if='{{eventLog==2}}'>
+          <view class="red-record-info">
+            <view class="red-record-nickname ellipsis">{{list.storesname}}</view>
+            <view class="red-record-time">提现时间：{{list.add_time}}</view>
+          </view>
+           
+          <view class="red-record-val">
+           <block wx:if='{{list.status==1}}'>
+             <text class='red-record-moneying'>{{list.money}}</text>
+           </block>
+           <block wx:if='{{list.status==2}}'>
+             <text class='red-record-didmoney'>{{list.money}}</text>
+           </block>
+          
+           <text class='red-record-log'>{{list.status==1?'审核中':'提现成功'}}</text>
+          </view>
+         </block>
+         
+    
+        </view>
+      </scroll-view>
+    </view>
+  </view>

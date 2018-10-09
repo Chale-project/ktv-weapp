@@ -1,0 +1,49 @@
+<import src="../template/template.wxml" />
+
+<view class='activityView' style="background:url({{imgUrl + actInfo.back_img}}) top center no-repeat;background-size: cover;">
+  <view class="activity-panel">
+    <view class="activity-panel-header">
+      <image class='topView-left' src='/images/123.png' mode="widthFix"></image>
+      <text class='topView-title'>联盟商家</text>
+      <image class='topView-left' src='/images/321.png' mode="widthFix"></image>
+    </view>
+    <view class="activity-panel-body">
+      <view class="shop-info">
+        <view class="shop-info-top clearfix">
+          <view class="shop-info-banner">
+            <image src="{{imgUrl+ actInfo.banner}}" mode="widthFix"></image>
+          </view>
+          <view class="shop-info-name-tel">
+            <view class="shop-info-name ellipsis">{{actInfo.storesname}}</view>
+            <view class="shop-info-tel" bindtap="callPhone" data-phone="{{actInfo.phone}}">{{actInfo.phone}}</view>
+          </view>
+        </view>
+        <view class="shop-info-bottom clearfix">
+          <view class="shop-info-address">地址：{{actInfo.address}}</view>
+          <view class="shop-info-navigation" data-name="{{actInfo.storesname}}" data-latitude="{{actInfo.latitude}}" data-longitude="{{actInfo.longitude}}" bindtap="openLoc">使用导航</view>
+        </view>
+      </view>
+      <view class="operation-con">
+        <view class="operation-con-payuser clearfix">
+          <view class="operation-con-money">¥
+            <text>{{actInfo.buy_money}}</text>
+          </view>
+          <button class="btn-operate-pay" bindtap="chargeCardUser">立即成为会员</button>
+        </view>
+        <view class="operation-con-share clearfix">
+          <view class="operation-con-money">分享好友送 ¥
+            <text>{{actInfo.share_award}}</text>
+          </view>
+          <button class="btn-operate-share" bindtap="getShareImg">分享好友</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+
+<template is="shareModalMask" data="{{isShow,shareQrcodeImg}}" />
+<template is="authModalMask" data="{{isAuth,canIUse,authTitle,authSubTitle}}" />
+<template is="phoneModalMask" data="{{isPhone,authTitle,phoneSubTitle,checkStatus}}" />

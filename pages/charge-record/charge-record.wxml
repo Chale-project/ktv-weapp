@@ -1,0 +1,24 @@
+<import src="../template/template.wxml" />
+<view class='card-record-container'>
+
+  <view class="weui-tab">
+    <view class="weui-tab__panel">
+      <view class="weui-tab__content">
+        <block wx:for="{{chargeList}}">
+          <view class='card-record clearfix'>
+            <view class="card-store-time">
+              <view class="card-store ellipsis">{{item.storesname}}</view>
+              <view class="card-time ellipsis">{{item.type==1?'有效期:'+item.pay_time+' 至 '+item.end_time:'存酒时间:'+item.pay_time}}</view>
+            </view>
+            <view class="card-type-num">
+              <view class="recharge">{{item.type==1?item.money+'元':item.amount+'瓶'}}</view>
+              <view class="card-num">{{item.remark}}</view>
+            </view>
+          </view>
+        </block>
+        <view class='card-no-record' hidden="{{hidden}}">没有更多了…</view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,6 @@
+<view class='topview'>
+  <input class="inputField" confirm-type='done' adjust-position='true' value='{{nickName}}' bindblur='getValue'></input>
+</view>
+<view class='confirmView'>
+ <button class='confirm' bindtap='confirmChange'>确认</button>
+</view>

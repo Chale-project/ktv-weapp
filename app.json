@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/login/login",
+    "pages/service/service",
+    "pages/activity/activity",
+    "pages/rewards/rewards",
+    "pages/rewardsSuccess/rewardsSuccess",
+    "pages/shop/shop",
+    "pages/search/search",
+    "pages/person/person",
+    "pages/give-center/give-center",
+    "pages/changeNick/changeNick",
+    "pages/card-record/card-record",
+    "pages/charge-record/charge-record",
+    "pages/red-packets/red-packets",
+    "pages/red-packets-record/red-packets-record",
+    "pages/donation/donation",
+    "pages/vip-card/vip-card",
+    "pages/vip-card-detail/vip-card-detail",
+    "pages/vip-detail/vip-detail",
+    "pages/goods/goods",
+    "pages/order/order",
+    "pages/order-detail/order-detail",
+    "pages/orderCreate/orderCreate"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "欢唱时代",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#ff7800",
+    "backgroundColor": "#f8f8f8",
+    "borderStyle": "#dddddd",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_selected.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_selected.png"
+      }
+    ]
+  }
+}

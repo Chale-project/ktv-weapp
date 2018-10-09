@@ -1,0 +1,28 @@
+<!--red-packets-record.wxml-->
+<view class="page red-packets-record">
+  <view class="red-packets-record-time">{{curDate}}</view>
+  <view class="red-packets-record-content weui-cells weui-cells_after-title">
+    <view class="weui-cell red-packets-record-list" wx:for="{{getReciveList}}" wx:for-item="list" wx:key="{{i}}">
+      <view class="weui-cell__bd">
+        <view class="red-packets-record-list-title ellipsis" wx:if="{{list.code=='send'}}">{{list.recive_username}}成功赠出</view>
+        <view class="red-packets-record-list-title ellipsis" wx:elif="{{list.code=='get'}}">收到来自{{list.username}}用户的赠送</view>
+        <view class="red-packets-record-list-time">{{list.recive_date}}</view>
+      </view>
+      <view class="weui-cell__ft">
+        <view wx:if="{{list.code=='send'}}" class="record-minus">-{{list.par_value}}瓶</view>
+        <view wx:elif="{{list.code=='get'}}" class="record-plus">+{{list.par_value}}瓶</view>
+        <view class="record-from-what ellipsis">{{list.title}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-loadmore" hidden='{{loading}}'>
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+
+  <view class="weui-loadmore weui-loadmore_line" hidden='{{noData}}'>
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+  </view>
+
+</view>

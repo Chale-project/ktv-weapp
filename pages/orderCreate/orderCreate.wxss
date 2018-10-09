@@ -1,0 +1,166 @@
+@import '../template/template.wxss';
+
+.order-create {
+  margin: 15px 15px 50px;
+}
+
+.order-header {
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.order-store-info, .order-person-number {
+  padding: 12px 10px;
+}
+
+.order-store-info {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.order-store-name {
+  flex: 2;
+}
+
+.order-store-room {
+  flex: 1;
+  text-align: right;
+}
+
+.order-person-number .section-title {
+  width: 60%;
+  float: left;
+}
+
+.order-person-number .section-body {
+  width: 40%;
+  float: left;
+  text-align: right;
+  color: #666;
+}
+
+.input-person-num{
+  text-align: right;
+  color: #ff8519;
+}
+
+.placeholder-input-person-num{
+  color: #ff8519;
+}
+
+.order-panel {
+  padding: 10px;
+  background: #fff;
+}
+
+.order-panel-header {
+  padding: 0 10px 10px;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.order-panel-body {
+  padding: 10px 0;
+}
+
+.order-goods-list {
+  position: relative;
+  padding-bottom: 10px;
+  /* margin-bottom: 10px; */
+}
+
+/* .order-goods-list::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  left: 40px;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  background-color: #c8c7cc;
+} */
+
+.order-goods-image {
+  width: 40px;
+  height: 40px;
+  float: left;
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.order-goods-image image {
+  width: 100%;
+}
+
+.order-goods-info {
+  width: calc(100% - 50px);
+  float: left;
+}
+
+.order-goods-info-title {
+  line-height: 16px;
+  padding-bottom: 4px;
+}
+
+.order-goods-info-price-num {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 20px;
+  color: #666;
+}
+
+.order-panel-footer {
+  padding-top: 10px;
+  text-align: right;
+  border-top: 1rpx solid #ddd;
+}
+
+.order-footer {
+  position: fixed;
+  height: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+}
+
+.order-settlement {
+  box-sizing: border-box;
+  width: calc(100% - 120px);
+  height: 50px;
+  line-height: 20px;
+  float: left;
+  padding: 15px;
+  font-size: 15px;
+}
+
+.order-final-money{
+  color: #ff8519;
+  padding-right: 10px;
+}
+
+.order-creat-pay {
+  width: 120px;
+  height: 50px;
+  line-height: 50px;
+  float: right;
+  font-size: 16px;
+  border-radius: 0;
+  color: #fff;
+  background: rgba(255, 133, 25, 1);
+}
+
+.order-creat-pay-active {
+  background: rgba(255, 133, 25, 0.6);
+}
+
+button[disabled].order-creat-pay {
+  color: #fff;
+  background: rgba(255, 133, 25, 0.6);
+}

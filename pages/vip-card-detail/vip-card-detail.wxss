@@ -1,0 +1,88 @@
+.vip-card-face {
+  position: relative;
+  background: #262930;
+  padding: 30px 15px;
+}
+
+.vip-card-info {
+  box-sizing: border-box;
+  width: 70%;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 6px;
+  padding: 30px 15px;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(250, 213, 141, 1), rgba(183, 140, 92, 1));
+}
+
+.vip-card-thumb {
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.vip-card-thumb image {
+  width: 45px;
+  height: 45px;
+}
+
+.vip-card-title-val {
+  margin-top: 10px;
+  color: #6b410d;
+}
+
+.vip-card-title {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.vip-card-val {
+  color: #875e2c;
+}
+
+.expiry-date-val{
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 12px;
+}
+.curve {
+  position: absolute;
+  height: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  background: #fff;
+  z-index: 9;
+}
+
+.vip-card-desc {
+  position: relative;
+  box-sizing: border-box;
+  padding: 15px 15px 50px;
+  background: #fff;
+}
+
+.vip-card-desc-content {
+  padding: 10px 0;
+}
+
+.vip-card-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.btn-vip-card-give-as {
+  background: #454a54;
+  color: #f8d38c;
+  border-radius: 0;
+}
+
+.btn-vip-card-give-as-active {
+  background: rgba(69, 74, 84, 0.6);
+}

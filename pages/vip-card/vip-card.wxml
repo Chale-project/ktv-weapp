@@ -1,0 +1,68 @@
+<view class='card-bag' style='padding-bottom: 120rpx;'>
+  <block wx:if="{{memberList.length==0&&activeList.length==0}}">
+    <view class="nodata-list">
+      该门店还没有充值卡等活动哦^_^
+    </view>
+  </block>
+  <block wx:else>
+    <text class='card-bag-title' style='display: block;'>商家消费卡</text>
+    <block wx:if="{{memberList.length==0}}">
+      <view class="nodata-list">
+        非常抱歉，还没有相关的消费卡活动^_^
+      </view>
+    </block>
+    <block  wx:for="{{memberList}}" wx:for-item="list" wx:for-index='index'>
+      <view class='card-bag-con'>
+        <view class='card-bag-bg'>
+          <image src='{{imgUrl+list.card_icon}}'></image>
+          <view class='card-bag-desc'>
+            <text class='card-bag-title-text'>{{list.name}}</text>
+            <text class='card-bag-price'>￥ {{list.buy_money}}</text>
+          </view>
+
+          <view class='card-bag-option'>
+            <text class='card-bag-option-btn' data-id="{{list.id}}" data-storeid="{{list.store_id}}" data-money="{{list.buy_money}}" data-name="{{list.name}}" data-type="card" bindtap='oneKeyCharge'>一键充值</text>
+          </view>
+
+        </view>
+        <!-- <view class='card-bag-deadline' data-id="{{list.id}}" data-storeid="{{list.store_id}}" data-name="{{list.name}}" data-icon="{{imgUrl+list.card_icon}}" data-type="card" bindtap='goToVipCardDetail'>
+          <text class="see-notice">查看使用说明</text>
+          <text class='iconfont icon-gengduo1'></text>
+        </view> -->
+      </view>
+    </block>
+
+
+    <text class='card-bag-title' style='display: block;'>商家活动</text>
+    <block wx:if="{{activeList.length==0}}">
+      <view class="nodata-list">
+        非常抱歉，商家还没有相关的活动^_^
+      </view>
+    </block>
+    <block wx:for="{{activeList}}" wx:for-item="list" wx:for-index='index'>
+      <view class='card-bag-con'>
+        <view class='card-bag-bg'>
+          <image src='{{imgUrl+list.card_icon}}'></image>
+          <view class='card-bag-desc'>
+            <text class='card-bag-title-text'>{{list.title}}</text>
+            <text class='card-bag-price'>￥ {{list.recharge_money}}</text>
+          </view>
+
+          <view class='card-bag-option'>
+            <text class='card-bag-option-btn' data-id="{{list.active_id}}" data-storeid="{{list.store_id}}" data-money="{{list.recharge_money}}" data-name="{{list.title}}" data-type="activity" bindtap='oneKeyCharge'>一键充值</text>
+          </view>
+
+        </view>
+        <!-- <view class='card-bag-deadline' data-id="{{list.id}}" data-storeid="{{list.store_id}}" data-name="{{list.title}}" data-icon="{{imgUrl+list.card_icon}}" data-type="activity" bindtap='goToVipCardDetail'>
+          <text class="see-notice">查看使用说明</text>
+          <text class='iconfont icon-gengduo1'></text>
+        </view> -->
+      </view>
+    </block>
+  </block>
+</view>
+
+<view class='card-check'>
+  <!-- <text style='background:#fd3152' bindtap="goToRecord">查看消费记录</text> -->
+  <text style='width:100%;background:#ff8519;' bindtap="goToCardDetail">查看充值记录</text>
+</view>

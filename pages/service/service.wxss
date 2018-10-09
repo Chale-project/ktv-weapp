@@ -1,0 +1,20 @@
+.section{
+  margin-top: 30rpx;
+}
+
+.section textarea{
+  background: #fff;
+  padding: 10rpx;
+  width: 730rpx;
+  font-size: 28rpx;
+}
+
+.section button{
+  background: #ff8519;
+  margin-top: 30rpx;
+  width: 690rpx;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+}

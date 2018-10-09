@@ -1,0 +1,20 @@
+<view class='vip-detail'>
+
+  <view class="vip-detail-header">
+    <view class="vip-detail-avatar">
+      <image mode="widthFix" src="{{userInfo.headimgurl}}"></image>
+    </view>
+    <view class="vip-detail-mobile">{{userInfo.mobile}}</view>
+  </view>
+  <view class="vip-detail-content">
+    <view class="vip-detail-content-bg"></view>
+    <view class="vip-detail-content-con">
+      <view class="is-vip-detail" wx:if="{{isVip}}">
+        恭喜您成为 {{storeName}} 尊贵VIP会员！
+      </view>
+      <view class="is-not-vip-detail" wx:else>
+        <button class="goto-vip-card" bindtap="goToVipCard">立即成为会员</button>
+      </view>
+    </view>
+  </view>
+</view>

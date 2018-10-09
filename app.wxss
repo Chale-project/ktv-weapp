@@ -1,0 +1,133 @@
+/**app.wxss**/
+@import "utils/weui.wxss";
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+  color: #999;
+}
+
+button::after {
+  border: 0;
+}
+
+page {
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 14px;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.page__hd {
+  padding: 40px;
+}
+
+.page__bd {
+  padding-bottom: 40px;
+}
+
+.page__bd_spacing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.page__ft {
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.page__title {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.page__desc {
+  margin-top: 5px;
+  color: #888;
+  text-align: left;
+  font-size: 14px;
+}
+
+image {
+  vertical-align: middle;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clearfix {
+  clear: both;
+  overflow: hidden;
+  _zoom: 1;
+}
+
+.color-default {
+  color: #ff7800;
+}
+
+.color-red {
+  color: #fd3152;
+}
+
+.color-blue {
+  color: #2ea7fb;
+}
+
+.but-default {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 14px;
+  padding-right: 14px;
+  box-sizing: border-box;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 2.55555556;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  color: #fff;
+  background-color: #ff7800;
+}
+
+.but-default-active {
+  background: rgba(255, 120, 0, 0.6);
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ellipsis-2 {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.fix-iphonex-button {
+  bottom: 0rpx !important;
+  content: ' ';
+  position: fixed;
+  height: 68rpx !important;
+  width: 100%;
+  background: #fff;
+}

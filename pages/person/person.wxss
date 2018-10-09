@@ -1,0 +1,47 @@
+
+@import "../../utils/iconfont.wxss";
+
+.list-container {
+  border-top: 1rpx solid #f8f8f8;
+  background: #fff;
+  padding: 10rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list-container:last-child{
+  border-bottom: 1rpx solid #ddd;
+}
+
+.card-list-l, .card-list-r {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card-list-l-text{
+  font-size: 16px;
+  color: #222;
+  line-height: 40px;
+}
+
+.card-list-r-text{
+  font-size: 14px;
+  line-height: 40px;
+  text-align: right;
+}
+
+.card-list-r .iconfont.icon-gengduo1{
+  font-size: 28rpx;
+  line-height: 40px;
+  margin-left: 5px;
+  color: #666;
+}
+
+.avatar{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
